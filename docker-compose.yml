@@ -1,0 +1,20 @@
+services:
+  magnet-bot:
+    build: .
+    container_name: magnet-bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TZ: ${TZ:-Europe/Saratov}
+    # Если qBittorrent слушает на хосте (http://host.docker.internal:8080):
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Если qBittorrent в другом compose-проекте — подключите общую сеть:
+    # и в .env укажите QBIT_URL=http://<имя_контейнера_qbit>:8080
+    # networks:
+    #   - qbit_net
+
+# networks:
+#   qbit_net:
+#     external: true
+#     name: <имя_сети_qbittorrent>

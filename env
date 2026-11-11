@@ -1,0 +1,31 @@
+# ---------- Telegram ----------
+# Токен от @BotFather
+TELEGRAM_BOT_TOKEN=123456:ABC-your-token
+# Telegram ID, которым разрешено пользоваться ботом (через запятую). Узнать свой: @userinfobot
+ALLOWED_USER_IDS=123456789
+
+# ---------- qBittorrent WebUI ----------
+# Адрес WebUI. Варианты:
+#   на хосте:                 http://host.docker.internal:8080
+#   контейнер в общей сети:   http://qbittorrent:8080
+QBIT_URL=http://host.docker.internal:8080
+QBIT_USERNAME=admin
+QBIT_PASSWORD=adminadmin
+# false — если https с самоподписанным сертификатом
+QBIT_VERIFY_SSL=true
+# Добавлять торрент на паузе (true/false)
+QBIT_START_PAUSED=false
+# Если нужны категории в qbit: префикс (например "bot-" даст bot-series, bot-movies, bot-music). Пусто — без категорий
+QBIT_CATEGORY_PREFIX=
+
+# ---------- Папки загрузки ----------
+# ВАЖНО: пути как их видит САМ qBittorrent (внутри его контейнера), а не бот
+PATH_SERIES=/downloads/series
+PATH_MOVIES=/downloads/movies
+PATH_MUSIC=/downloads/music
+
+# ---------- Прочее ----------
+# Сколько секунд жить выбору папки после отправки ссылки
+PENDING_TTL_SECONDS=3600
+LOG_LEVEL=INFO
+TZ=Europe/Saratov
